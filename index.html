@@ -1,19 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Site</title>
+  <title>Gabi Cloud - Soluções em Nuvem</title>
   <style>
+    /* Estilos Globais */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* Cabeçalho */
+    header {
+      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      color: #fff;
+      padding: 20px 0;
       text-align: center;
-      padding: 50px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    /* Navegação */
+    nav {
+      background: #333;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav ul li {
+      font-size: 1rem;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Seção Principal */
+    .hero {
+      background: url('https://source.unsplash.com/1600x900/?cloud,technology') no-repeat center center/cover;
+      height: 400px;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    /* Seções Internas */
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    section h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #4facfe;
+    }
+
+    .services {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .service-card {
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      width: 300px;
+      text-align: left;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card h4 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Rodapé */
+    footer {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <h1>Bem-vindo ao meu site!</h1>
-  <p>Este site está hospedado no GitHub Pages.</p>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Gabi Cloud</h1>
+    <p>Transformamos seu negócio com soluções em nuvem de alta performance</p>
+  </header>
+
+  <!-- Navegação -->
+  <nav>
+    <ul>
+      <li><a href="#services">Serviços</a></li>
+      <li><a href="#about">Sobre Nós</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- Seção Hero -->
+  <div class="hero">
+    <h2>Soluções inteligentes, escaláveis e seguras para sua empresa</h2>
+  </div>
+
+  <!-- Serviços -->
+  <section id="services">
+    <h3>Nossos Serviços</h3>
+    <div class="services">
+      <div class="service-card">
+        <h4>Armazenamento em Nuvem</h4>
+        <p>Garantimos espaço seguro e confiável para seus dados com acesso global.</p>
+      </div>
+      <div class="service-card">
+        <h4>Computação Escalável</h4>
+        <p>Infraestrutura sob demanda para atender as necessidades do seu negócio.</p>
+      </div>
+      <div class="service-card">
+        <h4>Backup Automatizado</h4>
+        <p>Soluções de backup contínuo para proteger seus dados contra perdas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Nós -->
+  <section id="about">
+    <h3>Sobre Nós</h3>
+    <p>A Gabi Cloud é líder em soluções de tecnologia em nuvem, oferecendo serviços personalizados que atendem às demandas de pequenas e grandes empresas. Nosso objetivo é garantir segurança, escalabilidade e inovação para transformar a forma como você faz negócios.</p>
+  </section>
+
+  <!-- Contato -->
+  <section id="contact">
+    <h3>Fale Conosco</h3>
+    <p>Entre em contato conosco para saber mais sobre nossas soluções:</p>
+    <p>Email: contato@gabicloud.com | Telefone: (11) 1234-5678</p>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2024 Gabi Cloud. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
