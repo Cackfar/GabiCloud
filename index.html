@@ -13,26 +13,42 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       color: #333;
+      background-color: #f0f8ff; /* Azul claro para remeter a nuvens */
       line-height: 1.6;
     }
 
     a {
       text-decoration: none;
       color: #fff;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #f0f8ff;
     }
 
     ul {
       list-style: none;
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     /* Cabeçalho */
     header {
-      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      background: linear-gradient(90deg, #4facfe, #00c6ff);
       color: #fff;
       padding: 20px 0;
       text-align: center;
+    }
+
+    header .logo {
+      max-width: 150px;
+      margin-bottom: 10px;
     }
 
     header h1 {
@@ -46,7 +62,7 @@
 
     /* Navegação */
     nav {
-      background: #333;
+      background: #003366;
       padding: 10px 0;
     }
 
@@ -60,11 +76,7 @@
       font-size: 1rem;
     }
 
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-    /* Seção Principal */
+    /* Seção Hero */
     .hero {
       background: url('https://source.unsplash.com/1600x900/?cloud,technology') no-repeat center center/cover;
       height: 400px;
@@ -74,14 +86,21 @@
       align-items: center;
       text-align: center;
       padding: 20px;
+      position: relative;
     }
 
     .hero h2 {
       font-size: 2rem;
       text-shadow: 2px 2px 4px #000;
+      animation: fadeIn 2s ease-in-out;
     }
 
-    /* Seções Internas */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Seções */
     section {
       padding: 40px 20px;
       text-align: center;
@@ -90,40 +109,60 @@
     section h3 {
       font-size: 2rem;
       margin-bottom: 20px;
-      color: #4facfe;
+      color: #003366;
     }
 
-    .services {
+    .content {
       display: flex;
       justify-content: center;
+      align-items: flex-start;
       gap: 20px;
       flex-wrap: wrap;
     }
 
-    .service-card {
-      background: #f4f4f4;
+    .card {
+      background: #fff;
       border: 1px solid #ddd;
       border-radius: 8px;
       padding: 20px;
       width: 300px;
-      text-align: left;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .service-card h4 {
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h4 {
       margin-bottom: 10px;
       font-size: 1.2rem;
       color: #333;
     }
 
-    .service-card p {
+    .card p {
       font-size: 0.9rem;
       color: #666;
     }
 
+    /* Missão, Visão e Valores */
+    .mission-section {
+      background: #e6f7ff;
+      padding: 40px 20px;
+    }
+
+    .mission-section div {
+      margin-bottom: 20px;
+    }
+
+    .mission-section div:last-child {
+      margin-bottom: 0;
+    }
+
     /* Rodapé */
     footer {
-      background: #333;
+      background: #003366;
       color: #fff;
       padding: 20px;
       text-align: center;
@@ -137,14 +176,16 @@
 <body>
   <!-- Cabeçalho -->
   <header>
+    <img src="logo.png" alt="Logo da Gabi Cloud" class="logo">
     <h1>Gabi Cloud</h1>
-    <p>Transformamos seu negócio com soluções em nuvem de alta performance</p>
+    <p>Soluções em nuvem para impulsionar sua empresa</p>
   </header>
 
   <!-- Navegação -->
   <nav>
     <ul>
       <li><a href="#services">Serviços</a></li>
+      <li><a href="#mission">Missão, Visão e Valores</a></li>
       <li><a href="#about">Sobre Nós</a></li>
       <li><a href="#contact">Contato</a></li>
     </ul>
@@ -152,25 +193,42 @@
 
   <!-- Seção Hero -->
   <div class="hero">
-    <h2>Soluções inteligentes, escaláveis e seguras para sua empresa</h2>
+    <h2>Soluções inteligentes, escaláveis e seguras para o seu negócio</h2>
   </div>
 
   <!-- Serviços -->
   <section id="services">
     <h3>Nossos Serviços</h3>
-    <div class="services">
-      <div class="service-card">
+    <div class="content">
+      <div class="card">
         <h4>Armazenamento em Nuvem</h4>
-        <p>Garantimos espaço seguro e confiável para seus dados com acesso global.</p>
+        <p>Espaço seguro e confiável para seus dados com acesso global.</p>
       </div>
-      <div class="service-card">
+      <div class="card">
         <h4>Computação Escalável</h4>
         <p>Infraestrutura sob demanda para atender as necessidades do seu negócio.</p>
       </div>
-      <div class="service-card">
+      <div class="card">
         <h4>Backup Automatizado</h4>
-        <p>Soluções de backup contínuo para proteger seus dados contra perdas.</p>
+        <p>Proteja seus dados com backup contínuo e seguro.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Missão, Visão e Valores -->
+  <section id="mission" class="mission-section">
+    <h3>Missão, Visão e Valores</h3>
+    <div>
+      <h4>Missão</h4>
+      <p>Prover soluções inovadoras em nuvem, garantindo segurança e escalabilidade para empresas de todos os tamanhos.</p>
+    </div>
+    <div>
+      <h4>Visão</h4>
+      <p>Ser a líder no mercado de soluções em nuvem na América Latina, promovendo transformação digital.</p>
+    </div>
+    <div>
+      <h4>Valores</h4>
+      <p>Inovação, confiança, excelência e compromisso com o sucesso dos nossos clientes.</p>
     </div>
   </section>
 
@@ -183,7 +241,7 @@
   <!-- Contato -->
   <section id="contact">
     <h3>Fale Conosco</h3>
-    <p>Entre em contato conosco para saber mais sobre nossas soluções:</p>
+    <p>Entre em contato para saber mais sobre nossas soluções:</p>
     <p>Email: contato@gabicloud.com | Telefone: (11) 1234-5678</p>
   </section>
 
