@@ -1,253 +1,213 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gabi Cloud - Soluções em Nuvem</title>
-  <style>
-    /* Estilos Globais */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabi Cloud - Soluções em Nuvem</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
 
-    body {
-      font-family: 'Arial', sans-serif;
-      color: #333;
-      background-color: #f0f8ff; /* Azul claro para remeter a nuvens */
-      line-height: 1.6;
-    }
+        body {
+            background-color: #121212; /* Cor de fundo escura */
+            color: #fff;
+        }
 
-    a {
-      text-decoration: none;
-      color: #fff;
-      transition: color 0.3s ease;
-    }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+        }
 
-    a:hover {
-      color: #f0f8ff;
-    }
+        header .logo img {
+            width: 150px;
+        }
 
-    ul {
-      list-style: none;
-    }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+        nav ul li {
+            margin-left: 20px;
+        }
 
-    /* Cabeçalho */
-    header {
-      background: linear-gradient(90deg, #4facfe, #00c6ff);
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
+        nav ul li a {
+            color: #f7941e; /* Cor laranja para os links */
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-    header .logo {
-      max-width: 150px;
-      margin-bottom: 10px;
-    }
+        nav ul li a:hover {
+            color: #8e4b9e; /* Cor roxa no hover */
+        }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Laranja e rosa */
+            color: white;
+            margin-top: 20px;
+        }
 
-    header p {
-      font-size: 1.2rem;
-    }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeIn 2s forwards;
+        }
 
-    /* Navegação */
-    nav {
-      background: #003366;
-      padding: 10px 0;
-    }
+        .cta-button {
+            background-color: #f7941e;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
 
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
+        .cta-button:hover {
+            background-color: #8e4b9e; /* Cor roxa no hover */
+        }
 
-    nav ul li {
-      font-size: 1rem;
-    }
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeIn 2s forwards;
+        }
 
-    /* Seção Hero */
-    .hero {
-      background: url('https://source.unsplash.com/1600x900/?cloud,technology') no-repeat center center/cover;
-      height: 400px;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      position: relative;
-    }
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
 
-    .hero h2 {
-      font-size: 2rem;
-      text-shadow: 2px 2px 4px #000;
-      animation: fadeIn 2s ease-in-out;
-    }
+        .section p, .section ul {
+            font-size: 1.1em;
+        }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
+        .contact-section {
+            background-color: #222;
+            padding: 40px;
+            text-align: center;
+        }
 
-    /* Seções */
-    section {
-      padding: 40px 20px;
-      text-align: center;
-    }
+        footer {
+            background-color: #1a1a1a;
+            color: #f7941e;
+            text-align: center;
+            padding: 20px;
+        }
 
-    section h3 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #003366;
-    }
+        .fade-in {
+            animation: fadeIn 2s forwards;
+        }
 
-    .content {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-      width: 300px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    }
+            nav ul {
+                flex-direction: column;
+                margin-top: 10px;
+            }
 
-    .card h4 {
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-      color: #333;
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    /* Missão, Visão e Valores */
-    .mission-section {
-      background: #e6f7ff;
-      padding: 40px 20px;
-    }
-
-    .mission-section div {
-      margin-bottom: 20px;
-    }
-
-    .mission-section div:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Rodapé */
-    footer {
-      background: #003366;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    footer p {
-      font-size: 0.9rem;
-    }
-  </style>
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Cabeçalho -->
-  <header>
-    <img src="logo.png" alt="Logo da Gabi Cloud" class="logo">
-    <h1>Gabi Cloud</h1>
-    <p>Soluções em nuvem para impulsionar sua empresa</p>
-  </header>
+    <!-- Header (Logo) -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo da Gabi Cloud">
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#missao">Missão</a></li>
+                <li><a href="#visao">Visão</a></li>
+                <li><a href="#valores">Valores</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Navegação -->
-  <nav>
-    <ul>
-      <li><a href="#services">Serviços</a></li>
-      <li><a href="#mission">Missão, Visão e Valores</a></li>
-      <li><a href="#about">Sobre Nós</a></li>
-      <li><a href="#contact">Contato</a></li>
-    </ul>
-  </nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="fade-in">Bem-vindo à Gabi Cloud</h1>
+        <p>Transforme o futuro com soluções inovadoras em nuvem.</p>
+        <a href="#servicos" class="cta-button">Saiba Mais</a>
+    </section>
 
-  <!-- Seção Hero -->
-  <div class="hero">
-    <h2>Soluções inteligentes, escaláveis e seguras para o seu negócio</h2>
-  </div>
+    <!-- Missão, Visão, Valores -->
+    <section id="missao" class="section fade-in">
+        <h2>Missão</h2>
+        <p>Proporcionar soluções em nuvem que garantem inovação, segurança e escalabilidade para empresas em todo o mundo.</p>
+    </section>
 
-  <!-- Serviços -->
-  <section id="services">
-    <h3>Nossos Serviços</h3>
-    <div class="content">
-      <div class="card">
-        <h4>Armazenamento em Nuvem</h4>
-        <p>Espaço seguro e confiável para seus dados com acesso global.</p>
-      </div>
-      <div class="card">
-        <h4>Computação Escalável</h4>
-        <p>Infraestrutura sob demanda para atender as necessidades do seu negócio.</p>
-      </div>
-      <div class="card">
-        <h4>Backup Automatizado</h4>
-        <p>Proteja seus dados com backup contínuo e seguro.</p>
-      </div>
-    </div>
-  </section>
+    <section id="visao" class="section fade-in">
+        <h2>Visão</h2>
+        <p>Ser reconhecida globalmente como a líder em soluções de cloud computing, ajudando empresas a alcançar seu potencial máximo.</p>
+    </section>
 
-  <!-- Missão, Visão e Valores -->
-  <section id="mission" class="mission-section">
-    <h3>Missão, Visão e Valores</h3>
-    <div>
-      <h4>Missão</h4>
-      <p>Prover soluções inovadoras em nuvem, garantindo segurança e escalabilidade para empresas de todos os tamanhos.</p>
-    </div>
-    <div>
-      <h4>Visão</h4>
-      <p>Ser a líder no mercado de soluções em nuvem na América Latina, promovendo transformação digital.</p>
-    </div>
-    <div>
-      <h4>Valores</h4>
-      <p>Inovação, confiança, excelência e compromisso com o sucesso dos nossos clientes.</p>
-    </div>
-  </section>
+    <section id="valores" class="section fade-in">
+        <h2>Valores</h2>
+        <ul>
+            <li>Inovação constante</li>
+            <li>Segurança e confiabilidade</li>
+            <li>Comprometimento com a qualidade</li>
+        </ul>
+    </section>
 
-  <!-- Sobre Nós -->
-  <section id="about">
-    <h3>Sobre Nós</h3>
-    <p>A Gabi Cloud é líder em soluções de tecnologia em nuvem, oferecendo serviços personalizados que atendem às demandas de pequenas e grandes empresas. Nosso objetivo é garantir segurança, escalabilidade e inovação para transformar a forma como você faz negócios.</p>
-  </section>
+    <!-- Contato -->
+    <section id="contato" class="contact-section fade-in">
+        <h2>Entre em contato</h2>
+        <p>Envie-nos uma mensagem para saber mais sobre nossas soluções em nuvem.</p>
+    </section>
 
-  <!-- Contato -->
-  <section id="contact">
-    <h3>Fale Conosco</h3>
-    <p>Entre em contato para saber mais sobre nossas soluções:</p>
-    <p>Email: contato@gabicloud.com | Telefone: (11) 1234-5678</p>
-  </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Gabi Cloud. Todos os direitos reservados.</p>
+    </footer>
 
-  <!-- Rodapé -->
-  <footer>
-    <p>© 2024 Gabi Cloud. Todos os direitos reservados.</p>
-  </footer>
+    <script>
+        // Adiciona efeitos de destaque ao passar o mouse nas seções
+        document.querySelectorAll('.section').forEach(function(section) {
+            section.addEventListener('mouseover', function() {
+                section.style.transform = 'scale(1.05)';
+                section.style.transition = 'transform 0.3s';
+            });
+
+            section.addEventListener('mouseout', function() {
+                section.style.transform = 'scale(1)';
+            });
+        });
+    </script>
 </body>
 </html>
